@@ -1,0 +1,10 @@
+<mat-card>
+    <ul>
+        <li *ngFor="let name of names; let i = index; trackBy: trackByFunction">
+            {{ name }}
+            <button (click)="removeName(i)">Eliminar</button>
+        </li>
+    </ul>
+    <input (ngModel)="newName" placeholder="Nuevo Nombre" />
+    <button (click)="addName()">Agregar Nombre</button>
+</mat-card>
