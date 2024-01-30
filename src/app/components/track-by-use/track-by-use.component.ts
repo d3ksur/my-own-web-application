@@ -1,30 +1,42 @@
 import { Component } from '@angular/core';
 
+interface IUser {
+  id: number;
+  name: string;
+}
 @Component({
   selector: 'app-track-by-use',
   templateUrl: './track-by-use.component.html',
   styleUrls: ['./track-by-use.component.scss'],
 })
 export class TrackByUseComponent {
-  public names: Array<string> = ['Alice', 'Bob', 'Charlie'];
+  public usersName: Array<IUser> = [];
   public newName: any = '';
 
-  public constructor() {
-    console.log('hola');
+  public constructor() {}
+
+  public trackByFunction(index: number, user: IUser): number {
+    return user.id;
   }
 
-  trackByFunction(index: number, name: string): string {
-    return name; // Utiliza el nombre como clave única
-  }
-
-  addName(): void {
+  public addName(): void {
     if (this.newName.trim() !== '') {
-      this.names.push(this.newName.trim());
+      let newIndex: number = this.usersName.length;
+      if (newIndex === 0) {
+        newIndex = this.usersName.length;
+      }
+      newIndex + 1;
+      
+      this.usersName.push({
+        id: newIndex,
+        name: this.newName.trim(),
+      });
       this.newName = '';
     }
   }
 
-  removeName(index: number): void {
-    this.names.splice(index, 1);
+  public removeName(): void {
+    this.usersName.splice(0, this.usersName.length);
+    // this.usersName = [];
   }
 }

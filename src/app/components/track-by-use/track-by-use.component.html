@@ -1,10 +1,22 @@
 <mat-card>
-    <ul>
-        <li *ngFor="let name of names; let i = index; trackBy: trackByFunction">
-            {{ name }}
-            <button (click)="removeName(i)">Eliminar</button>
-        </li>
-    </ul>
-    <input (ngModel)="newName" placeholder="Nuevo Nombre" />
-    <button (click)="addName()">Agregar Nombre</button>
+    <mat-card-header>
+        Esto es el uso de trackBy
+    </mat-card-header>
+    <mat-card-content>
+        <ul class="ul-list">
+            <p>Estos son los elementos:</p>
+            <li *ngFor="let user of usersName; let i = index; trackBy: trackByFunction">
+                Index: {{i}} - Name: {{ user.name }} - Id: {{ user.id }}
+
+            </li>
+        </ul>
+        <div class="input-button-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Nuevo Nombre</mat-label>
+                <input matInput [(ngModel)]="newName" />
+            </mat-form-field>
+            <button mat-button (click)="addName()">Agregar Nombre</button>
+            <button mat-button (click)="removeName()">Eliminar</button>
+        </div>
+    </mat-card-content>
 </mat-card>
