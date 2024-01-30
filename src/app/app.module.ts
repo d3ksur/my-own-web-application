@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SinglentonUseModule } from './components/singlenton-use/singlenton-use.module';
 import { TrackByUseModule } from './components/track-by-use/track-by-use.module';
-import { HeaderComponent } from './components/landing/header/header.component';
+import { HeaderModule } from './components/landing/header/header.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
-  imports: [BrowserModule, SinglentonUseModule, TrackByUseModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, SinglentonUseModule, TrackByUseModule, HeaderModule],
   providers: [],
   bootstrap: [AppComponent],
 })
