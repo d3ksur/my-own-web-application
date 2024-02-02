@@ -26,7 +26,7 @@ export class TrackByUseComponent {
         newIndex = this.usersName.length;
       }
       newIndex + 1;
-      
+
       this.usersName.push({
         id: newIndex,
         name: this.newName.trim(),
@@ -36,7 +36,6 @@ export class TrackByUseComponent {
   }
 
   public removeName(): void {
-    this.usersName.splice(0, this.usersName.length);
-    // this.usersName = [];
+    this.usersName = [];
   }
 }

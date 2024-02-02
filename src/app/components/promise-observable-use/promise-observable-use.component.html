@@ -1,0 +1,11 @@
+<mat-card>
+    <p>Esto es el uso de Promises y Observers</p>
+    <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="selectedPokemon" type="text" placeholder="Escribe el nombre del pokemon">
+    </mat-form-field>
+    <button mat-button (click)="getPokemons(selectedPokemon)">Habilidades del pokemon</button>
+    <div *ngIf="pokemonAbilities.length !== 0">
+        <p *ngFor="let ability of pokemonAbilities">{{ability.ability.name}}</p>
+    </div>
+    <button mat-button (click)="promiseCallback()">Callback</button>
+</mat-card>
