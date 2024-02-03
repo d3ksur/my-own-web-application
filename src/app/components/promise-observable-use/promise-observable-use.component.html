@@ -3,9 +3,9 @@
     <mat-form-field appearance="outline">
         <input matInput [(ngModel)]="selectedPokemon" type="text" placeholder="Escribe el nombre del pokemon">
     </mat-form-field>
+    <ul class="ul-list" *ngIf="pokemonAbilities.length !== 0">
+        <li *ngFor="let ability of pokemonAbilities">{{ability.ability.name}}</li>
+    </ul>
     <button mat-button (click)="getPokemons(selectedPokemon)">Habilidades del pokemon</button>
-    <div *ngIf="pokemonAbilities.length !== 0">
-        <p *ngFor="let ability of pokemonAbilities">{{ability.ability.name}}</p>
-    </div>
     <button mat-button (click)="promiseCallback()">Callback</button>
 </mat-card>
