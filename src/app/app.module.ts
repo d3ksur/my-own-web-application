@@ -5,6 +5,7 @@ import { SinglentonUseModule } from './components/singlenton-use/singlenton-use.
 import { TrackByUseModule } from './components/track-by-use/track-by-use.module';
 import { HeaderModule } from './components/landing/header/header.module';
 import { PromiseObservableUseModule } from './components/promise-observable-use/promise-observable-use.module';
+import { SliderModule } from './components/slider/slider.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { PromiseObservableUseModule } from './components/promise-observable-use/
     TrackByUseModule,
     HeaderModule,
     PromiseObservableUseModule,
+    SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
